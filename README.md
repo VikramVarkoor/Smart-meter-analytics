@@ -4,6 +4,8 @@
 > this pipeline simulates, stores, queries, and visualises 6 months of
 > real-world-pattern power readings from 5 devices.
 
+![Power Analytics Dashboard](dashboard.png)
+
 ---
 
 ## Motivation
