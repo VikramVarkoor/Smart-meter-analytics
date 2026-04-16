@@ -160,32 +160,4 @@ JOIN tariff_rates t
 
 ---
 
-## Interview Talking Points
 
-**"Walk me through this project."**
-
-> I started with the hardware — an ESP32 with a current-transformer clamp
-> measuring real mains current.  Once I had the device working and streaming
-> data over MQTT, I wanted to build the analytics layer on top.  I wrote a
-> simulation engine in Python that replicates the exact patterns my hardware
-> produces: a sinusoidal daily load curve, weekend uplift, per-device load
-> profiles, and injected anomalies for theft/fault detection.  That gave me
-> ~22,000 rows of realistic hourly readings which I loaded into SQLite.  I then
-> wrote four SQL queries covering peak-consumption windows using GROUP BY,
-> consecutive-hour thresholds using a LAG/SUM window function, weekly anomaly
-> rates, and 6-month cost estimation via a tariff JOIN.  Finally I pulled it all
-> into a four-panel matplotlib dashboard.
-
-**"Why simulate the data instead of using a real dataset?"**
-
-> Because I understand the data model completely — I designed it.  I can
-> explain every column, every pattern, and every anomaly because I built them.
-> That's actually harder to fake in an interview than pulling a Kaggle dataset.
-
-**"What would you do differently at scale?"**
-
-> SQLite works fine here but at real-time IoT scale I'd move to TimescaleDB
-> (Postgres extension for time-series) or InfluxDB.  The SQL queries are
-> already written in standard SQL so migration would be mostly a config change.
-> For the dashboard, I'd replace the static PNG with a Grafana panel or a
-> Streamlit app with live refresh.
