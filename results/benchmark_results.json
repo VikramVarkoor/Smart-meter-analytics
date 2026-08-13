@@ -1,0 +1,44 @@
+{
+  "100000": {
+    "pandas": {
+      "q1_peak_window": 0.063,
+      "q2_overload_intervals": 0.024,
+      "q3_anomaly_rate_by_week": 0.102,
+      "q4_tou_tariff_cost": 0.041
+    },
+    "spark": {
+      "q1_peak_window": 1.183,
+      "q2_overload_intervals": 0.731,
+      "q3_anomaly_rate_by_week": 0.449,
+      "q4_tou_tariff_cost": 0.437
+    }
+  },
+  "1000000": {
+    "pandas": {
+      "q1_peak_window": 0.697,
+      "q2_overload_intervals": 0.034,
+      "q3_anomaly_rate_by_week": 1.311,
+      "q4_tou_tariff_cost": 0.522
+    },
+    "spark": {
+      "q1_peak_window": 0.16,
+      "q2_overload_intervals": 0.312,
+      "q3_anomaly_rate_by_week": 0.212,
+      "q4_tou_tariff_cost": 0.331
+    }
+  },
+  "5000000": {
+    "pandas": {
+      "q1_peak_window": 3.508,
+      "q2_overload_intervals": 0.155,
+      "q3_anomaly_rate_by_week": 5.896,
+      "q4_tou_tariff_cost": 3.39
+    },
+    "spark": {
+      "q1_peak_window": 0.431,
+      "q2_overload_intervals": 0.541,
+      "q3_anomaly_rate_by_week": 0.576,
+      "q4_tou_tariff_cost": 0.938
+    }
+  }
+}
