@@ -165,7 +165,7 @@ Timings below are query execution time only. Spark session startup (~30s) and in
 | Q4 ToU Tariff — pandas | 0.041s | 0.522s | 3.390s |
 | Q4 ToU Tariff — Spark | 0.437s | **0.331s** | **0.938s** |
 
-See `results/benchmark_chart.png` for the full comparison chart.
+![Benchmark Results](results/benchmark_chart.png)
 
 **Q2 (consecutive overload intervals) is the outlier** — pandas stays faster even at 5M rows because this query is bottlenecked by the pandas island-detection logic, which is already vectorised NumPy operations on an in-memory DataFrame. Spark's shuffle cost for the window function partition exceeds the pandas vectorisation advantage at this scale. On a real cluster at 100M+ rows, Spark would win here too.
 
